@@ -14,27 +14,14 @@ declare(strict_types=1);
  * @license  https://github.com/littlezo/MozillaPublicLicense/blob/main/LICENSE
  *
  */
+
 namespace littler\user;
 
 interface AuthorizeInterface
 {
 	public function getUserById($id): AuthorizeInterface;
 
-	public function hasUserByName($username): bool;
+	public function hasUser($username): bool;
 
-	public function getUserByName($username): AuthorizeInterface;
-
-	public function setMobile($mobile): AuthorizeInterface;
-
-	public function hasUserByMobile($mobile): bool;
-
-	public function getUserByMobile($mobile): AuthorizeInterface;
-
-	public function setName($username): AuthorizeInterface;
-
-	public function setPassword($password): AuthorizeInterface;
-
-	public function verifyPassword($password): bool;
-
-	public function token(): string;
+	public function getUser($username): AuthorizeInterface;
 }

@@ -14,7 +14,10 @@ declare(strict_types=1);
  * @license  https://github.com/littlezo/MozillaPublicLicense/blob/main/LICENSE
  *
  */
+
 namespace littler\user\Drive;
+
+use littler\User\Drive\DriveInterface;
 
 class Cache implements DriveInterface
 {

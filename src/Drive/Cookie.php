@@ -14,7 +14,10 @@ declare(strict_types=1);
  * @license  https://github.com/littlezo/MozillaPublicLicense/blob/main/LICENSE
  *
  */
+
 namespace think\User\Drive;
+
+use littler\User\Drive\DriveInterface;
 
 class Cookie implements DriveInterface
 {

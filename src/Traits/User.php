@@ -14,55 +14,26 @@ declare(strict_types=1);
  * @license  https://github.com/littlezo/MozillaPublicLicense/blob/main/LICENSE
  *
  */
+
 namespace littler\user\Traits;
 
 use littler\user\AuthorizeInterface;
 
 trait User
 {
-	public function hasUserByName($name): bool
+	public function getUserById($id): AuthorizeInterface
 	{
-		return $this->where('name', $name)->find() ? true : false;
+		// dd($id);
+		return $this->findBy($id)??$this;
 	}
 
-	public function getUserByName($name): AuthorizeInterface
+	public function hasUser($where): bool
 	{
-		return $this->where('name', $name)->find();
+		return $this->where($where)->find() ? true : false;
 	}
 
-	public function setName($name): AuthorizeInterface
+	public function getUser($where): AuthorizeInterface
 	{
-		$this->name = $name;
-
-		return $this;
-	}
-
-	public function hasUserByMobile($mobile): bool
-	{
-		return $this->where('mobile', $mobile)->find() ? true : false;
-	}
-
-	public function getUserByMobile($mobile): AuthorizeInterface
-	{
-		return $this->where('mobile', $mobile)->find();
-	}
-
-	public function setMobile($mobile): AuthorizeInterface
-	{
-		$this->name = $mobile;
-
-		return $this;
-	}
-
-	public function verifyPassword($password): bool
-	{
-		return password_verify($password, $this->password);
-	}
-
-	public function setPassword($password): AuthorizeInterface
-	{
-		$this->password = $password;
-
-		return $this;
+		return $this->where($where)->find();
 	}
 }

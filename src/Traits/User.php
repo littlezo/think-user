@@ -34,6 +34,7 @@ trait User
 
 	public function getUser($where): AuthorizeInterface
 	{
+		// dd($where);
 		return $this->where($where)->find();
 	}
 }

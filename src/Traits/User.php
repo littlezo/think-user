@@ -37,4 +37,24 @@ trait User
 		// dd($where);
 		return $this->where($where)->find();
 	}
+
+	public function setPasswdAttr($password)
+	{
+		return password_hash($password, PASSWORD_ARGON2ID);
+	}
+
+	public function setPayPasswdAttr($password)
+	{
+		return password_hash($password, PASSWORD_ARGON2ID);
+	}
+
+	public function setPasswordAttr($password)
+	{
+		return password_hash($password, PASSWORD_ARGON2ID);
+	}
+
+	public function setPayPasswordAttr($password)
+	{
+		return password_hash($password, PASSWORD_ARGON2ID);
+	}
 }

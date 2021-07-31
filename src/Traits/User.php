@@ -57,4 +57,24 @@ trait User
 	{
 		return password_hash($password, PASSWORD_ARGON2ID);
 	}
+
+	public function getPasswdAttr($password)
+	{
+		return;
+	}
+
+	public function getPayPasswdAttr($password)
+	{
+		return;
+	}
+
+	public function getPasswordAttr($password)
+	{
+		return;
+	}
+
+	public function getPayPasswordAttr($password)
+	{
+		return;
+	}
 }

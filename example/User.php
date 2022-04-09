@@ -14,7 +14,7 @@ declare(strict_types=1);
  * @license  https://github.com/littlezo/MozillaPublicLicense/blob/main/LICENSE
  *
  */
-include __DIR__ . '/../vendor/autoload.php';
+include __DIR__.'/../vendor/autoload.php';
 
 use littler\user\AuthorizeInterface;
 

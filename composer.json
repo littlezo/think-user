@@ -1,35 +1,34 @@
 {
-  "name": "littler/think-user",
-  "description": "ThinkPHP6 User",
-  "type": "library",
-  "minimum-stability": "stable",
-  "homepage": "https://github.com/littlezo",
-  "license": "MPL-2.0",
-  "authors": [
-    {
-      "name": "@小小只^v^",
-      "email": "littlezov@qq.com"
+    "name": "littler/think-user",
+    "description": "ThinkPHP6 User",
+    "type": "library",
+    "homepage": "https://github.com/littlezo",
+    "license": "MPL-2.0",
+    "authors": [
+        {
+            "name": "@小小只^v^",
+            "email": "littlezov@qq.com"
+        }
+    ],
+    "require": {
+        "topthink/framework": "^6.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "littler\\user\\": "src"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "littler\\user\\Service"
+            ]
+        }
+    },
+    "scripts": {
+        "cs-fix": "vendor/bin/php-cs-fixer fix"
     }
-  ],
-  "require": {
-    "topthink/framework": "^6.0"
-  },
-  "require-dev": {
-    "friendsofphp/php-cs-fixer": "^3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "littler\\user\\": "src"
-    }
-  },
-  "extra": {
-    "think": {
-      "services": [
-        "littler\\user\\Service"
-      ]
-    }
-  },
-  "scripts": {
-    "cs-fix": "vendor/bin/php-cs-fixer fix"
-  }
 }

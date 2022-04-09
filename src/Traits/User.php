@@ -23,8 +23,7 @@ trait User
 {
 	public function getUserById($id): AuthorizeInterface
 	{
-		// dd($id);
-		return $this->findBy($id)??$this;
+		return $this->find($id) ?? $this;
 	}
 
 	public function hasUser($where): bool
@@ -34,7 +33,6 @@ trait User
 
 	public function getUser($where): AuthorizeInterface
 	{
-		// dd($where);
 		return $this->where($where)->find();
 	}
 
@@ -56,5 +54,15 @@ trait User
 	public function setPayPasswordAttr($password)
 	{
 		return password_hash($password, PASSWORD_ARGON2ID);
+	}
+
+	public function setPaymentAttr($password)
+	{
+		return password_hash($password, PASSWORD_ARGON2ID);
+	}
+
+	public function getAutoPk()
+	{
+		return $this->getPk($this->getTable());
 	}
 }

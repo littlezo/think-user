@@ -14,6 +14,7 @@ declare(strict_types=1);
  * @license  https://github.com/littlezo/MozillaPublicLicense/blob/main/LICENSE
  *
  */
+
 namespace littler\user\Drive;
 
 use littler\user\AuthorizeInterface;
@@ -53,7 +54,7 @@ class DriveManager
 
 	public function user()
 	{
-		if ($this->isLogin() !== false) {
+		if (false !== $this->isLogin()) {
 			return $this->makeUser();
 		}
 		throw new Unauthorized('未登录');
@@ -75,6 +76,6 @@ class DriveManager
 		if ($model instanceof AuthorizeInterface) {
 			return $model->getUserById($id);
 		}
-		throw new Unauthorized('implements ' . AuthorizeInterface::class);
+		throw new Unauthorized('implements '.AuthorizeInterface::class);
 	}
 }
